@@ -194,12 +194,20 @@
     });
   }
 
-  updatePrice('USD');
-  updatePrice('BTC');
-  initParticles();
-  
-  setInterval(function(){
+  $(document).ready(function(){
+
     updatePrice('USD');
     updatePrice('BTC');
-  }, 60000);
+    initParticles();
+    
+    setInterval(function(){
+      updatePrice('USD');
+      updatePrice('BTC');
+    }, 60000);
+
+    $(document).on("click", ".wallet-button", function(){
+      $(".wallet-guide-detail").hide();
+      $($(this).attr('data-target')).fadeIn();
+    });
+  });
 
