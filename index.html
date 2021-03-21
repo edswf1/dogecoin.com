@@ -25,11 +25,27 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            #priceHolder{
+                display: inline-block;
+                line-height: 1.4rem;
+            }
+            .curPrice_USD{
+                display: block;
+            }
+            .curPrice_BTC{
+                font-size: 1rem; 
+                font-weight: 200;
+            }
+            #curPrice_DOGE{
+                vertical-align: top;
+            }
+        </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/dogecoin-300.png">&nbsp;Dogecoin</a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-secondary rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -37,52 +53,94 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Download</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#wallets">Wallets</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">What is dogecoin</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">How to get started</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#start">How to get started</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><span class="nav-link py-3 px-0 px-lg-3 rounded text-white curPrice_USD"></span></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
+        <header class="masthead bg-primary text-white text-center" style="position:relative;">
+            <div id="particles" style="position:absolute;top:0;bottom:0;left:0;right:0;"></div>
             <div class="container d-flex align-items-center flex-column">
                 <div class="row">
-                    <div class="col-md-6">
-                        <img class="masthead-avatar mb-1" src="assets/img/doge.png" alt="" />
+                    <div class="col-md-12 text-center">
+                        <h2 class="text-secondary"><span id="curPrice_DOGE">1 Dogecoin =</span> <div id="priceHolder"><span class="curPrice_USD">1 Dogecoin</span><span class="curPrice_BTC">1 Dogecoin</span></div></h2>
+                    </div>
+                    <div class="col-md-12">
+                        <img class="masthead-avatar mb-1" style="margin-top:-3rem;" src="assets/img/doge.png" alt="" />
                         <!-- Masthead Subheading-->
                         <p class="masthead-subheading font-weight-light text-secondary mb-0">Dogecoin is an open source peer-to-peer digital currency, favored by Shiba Inus worldwide.</p>
+                        <div class="btn-holder mt-4">
+                            <div class="btn btn-secondary btn-lg">Get Dogecoin</div>&nbsp;
+                            <a class="btn btn-outline-secondary btn-lg" href="https://github.com/dogecoin/dogecoin" target="_blank"><span class="fab fa-github"></span> View on GitHub</a>
+                        </div>
                     </div>
-                    <div class="col-md-6">
+                    <!--<div class="col-md-6">
                        <div class="video-container">
                             <iframe class="mt-5" src="https://www.youtube-nocookie.com/embed/_KVZmS_UO5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </header>
         <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
+        <section class="page-section portfolio" id="wallets">
             <div class="container">
                 <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Start using Dogecoin today</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Choose your Wallet</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+                <p class="lead">
+                    You have to sync with the blockchain to use Dogecoin.
+MultiDoge is a "light" wallet. It syncs with the blockchain by "skimming" through the blockchain, providing fast sync times.
+Dogecoin Core, on the other hand, is a "full" wallet. It syncs by downloading it, providing a solid-working Dogecoin wallet.
+                </p>
                 <!-- Portfolio Grid Items-->
                 <div class="row text-center justify-content-center">
-                    <div class="downloads">
-                        <button class="btn btn-md btn-info wallet-button" data-toggle="modal" data-target="#windows-wallet-modal"><span class="fab fa-windows"></span> <span data-i18n="dgc-wallet-windows"> Windows</span></button>
-                        <button class="btn btn-md btn-secondary wallet-button" data-toggle="modal" data-target="#osx-wallet-modal"><span class="fab fa-apple"></span> <span data-i18n="dgc-wallet-osx"> OS X</span></button>
-                        <button class="btn btn-md btn-success wallet-button" data-toggle="modal" data-target="#linux-wallet-modal"><span class="fab fa-linux"></span> <span data-i18n="dgc-wallet-linux"> Linux</span></button>
-                        <!-- <button class="btn btn-md btn-ios wallet-button" data-toggle="modal" data-target="#ios-wallet-modal"><span class="fa fa-mobile-phone"></span> <span data-i18n="dgc-wallet-ios">iOS</span></button> -->
-                        <button class="btn btn-md btn-warning wallet-button" data-toggle="modal" data-target="#android-wallet-modal"><span class="fab fa-android"></span> <span data-i18n="dgc-wallet-android"> Android</span></button>
-                        <!-- <a class="btn btn-md btn-blackberry wallet-button" href="http://appworld.blackberry.com/webstore/content/47952864" target="_blank"><span class="icon-blackberry"></span> <span data-i18n="dgc-wallet-blackberry">Blackberry</span></a> -->
-                        <!-- <button class="btn btn-md btn-warning wallet-button" data-toggle="modal" data-target="#browser-modal"><span class="fa fa-cloud"></span> <span data-i18n="dgc-wallet-browser">Browser</span></button> -->
-                        <a class="btn btn-md btn-danger wallet-button" href="https://github.com/dogecoin/dogecoin" target="_blank"><span class="fab fa-github"></span> <span data-i18n="dgc-wallet-source"> Source</span></a>
+                    <div class="col-md-6 col-lg-6 mb-5">
+                        <div class="mx-auto">
+                            <div class="img-holder">
+                                <p class="lead">Multidoge</p>
+                                <img style="max-width: 150px;" src="assets/img/multidoge.png">
+                            </div>
+                            <br>
+                            <a href="https://multidoge.org/?dl=win" target="_blank" class="btn btn-md btn-info wallet-button mb-2"><span class="fab fa-windows"></span> <span data-i18n="dgc-wallet-windows"> Windows</span></a>
+                            <br>
+                            <a href="https://multidoge.org/?dl=lin" target="_blank"  class="btn btn-md btn-success wallet-button mb-2"><span class="fab fa-linux"></span> <span data-i18n="dgc-wallet-linux"> Linux</span></a>
+                            <br>
+                            <a href="https://multidoge.org/?dl=osx" target="_blank"  class="btn btn-md btn-secondary wallet-button"><span class="fab fa-apple"></span> <span data-i18n="dgc-wallet-osx"> OS X</span></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 mb-5">
+                        <div class="mx-auto">
+                            <p class="lead">Dogecoin Core</p>
+                            <div class="img-holder">
+                                <img style="max-width: 150px;" src="assets/img/dogecoin-300.png">
+                            </div>
+                            <br>
+                            <a href="https://github.com/dogecoin/dogecoin/releases/download/v1.14.3/dogecoin-1.14.3-win32-setup-unsigned.exe" target="_blank" class="btn btn-md btn-info wallet-button mb-2"><span class="fab fa-windows"></span> <span data-i18n="dgc-wallet-windows"> Windows 32-bit</span></a>
+                            <a href="https://github.com/dogecoin/dogecoin/releases/download/v1.14.3/dogecoin-1.14.3-win64-setup-unsigned.exe" target="_blank" class="btn btn-md btn-info wallet-button mb-2"><span class="fab fa-windows"></span> <span data-i18n="dgc-wallet-windows"> Windows 64-bit</span></a>
+                            <br>
+                            <a href="https://github.com/dogecoin/dogecoin/releases/download/v1.14.3/dogecoin-1.14.3-i686-pc-linux-gnu.tar.gz" target="_blank"  class="btn btn-md btn-success wallet-button mb-2"><span class="fab fa-linux"></span> <span data-i18n="dgc-wallet-linux"> Linux 32-bit</span></a>
+                            <a href="https://github.com/dogecoin/dogecoin/releases/download/v1.14.3/dogecoin-1.14.3-x86_64-linux-gnu.tar.gz" target="_blank"  class="btn btn-md btn-success wallet-button mb-2"><span class="fab fa-linux"></span> <span data-i18n="dgc-wallet-linux"> Linux 64-bit</span></a>
+                            <br>
+                            <a href="https://github.com/dogecoin/dogecoin/releases/download/v1.14.3/dogecoin-1.14.3-osx.dmg" target="_blank"  class="btn btn-md btn-secondary wallet-button"><span class="fab fa-apple"></span> <span data-i18n="dgc-wallet-osx"> OS X</span></a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 mb-5">
+                        <div class="mx-auto">
+                            <p class="lead">Android Wallet</p>
+                            <a href="https://play.google.com/store/apps/details?id=de.langerhans.wallet&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1" target="_blank" class="img-holder">
+                                <img style="max-width: 150px;" src="assets/img/google_play.png">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,46 +148,58 @@
         <!-- About Section-->
         <section class="page-section bg-primary text-secondary mb-0" id="about">
             <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">What is Dogecoin?</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <p class="lead">Dogecoin is a decentralized, peer-to-peer digital currency that enables you to easily send money online. Think of it as "the internet currency."</p>
                 <div class="row">
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-12">
+                       <div class="video-container">
+                            <iframe class="mt-5" src="https://www.youtube-nocookie.com/embed/_KVZmS_UO5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-4">
                         <!-- About Section Heading-->
-                        <h3 class="text-center text-uppercase text-secondary">What is Dogecoin?</h3>
+                        <h3 class="text-center text-uppercase text-secondary">The fun and friendly internet currency?</h3>
                         <!-- About Section Content-->
-                            <div class="ml-auto"><p class="lead">Dogecoin is a decentralized, peer-to-peer digital currency that enables you to easily send money online. Think of it as "the internet currency."</p></div>
+                            <div class="ml-auto"><p class="lead">Dogecoin sets itself apart from other digital currencies with an amazing, vibrant community made up of friendly folks just like you."</p></div>
                         <!-- About Section Button-->
                         <div class="text-center mt-4">
-                            <a class="btn btn-secondary" href="https://startbootstrap.com/theme/freelancer/">
-                                <i class="fas fa-download mr-2"></i>
-                                get Started now
+                            <a class="btn btn-secondary" target="_blank" href="https://www.reddit.com/r/dogecoin">
+                                <i class="fab fa-reddit mr-2"></i>
+                                Join our Community
                             </a>
                             &nbsp;
-                            <a class="btn btn-outline-secondary" href="https://startbootstrap.com/theme/freelancer/">
-                                <i class="fas fa-download mr-2"></i>
+                            <a class="btn btn-outline-secondary" target="_blank" href="https://www.reddit.com/r/dogeducation">
+                                <i class="fab fa-reddit mr-2"></i>
                                 Learn more
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mt-4">
                         <!-- About Section Heading-->
                         <h3 class="text-center text-uppercase text-secondary">What's with Dogecoin and the dog?</h2>
                         <!-- About Section Content-->
                             <div class="ml-auto"><p class="lead">"Doge" is our fun, friendly mascot! The Shiba Inu is a Japanese breed of dog that was popularized as an online meme and represents Dogecoin.</p></div>
                         <!-- About Section Button-->
                         <div class="text-center mt-4">
-                            <a class="btn btn-secondary" href="https://startbootstrap.com/theme/freelancer/">
-                                <i class="fas fa-download mr-2"></i>
-                                Learn more about Doge
+                            <a class="btn btn-secondary" href="http://knowyourmeme.com/memes/doge" target="_blank">
+                                Learn more about the Meme
                             </a>
                             &nbsp;
-                            <a class="btn btn-outline-secondary" href="https://startbootstrap.com/theme/freelancer/">
-                                <i class="fas fa-download mr-2"></i>
+                            <a class="btn btn-outline-secondary" href="http://en.wikipedia.org/wiki/Shiba_Inu" target="_blank">
+                                <i class="fab fa-wikipedia-w mr-2"></i>
                                 Shiba Inu
                             </a>
                         </div>
                     </div>
                 </div>
         </section>
-         <section class="page-section portfolio" id="portfolio">
+         <section class="page-section portfolio" id="start">
             <div class="container">
                 <!-- Portfolio Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">How to get started with Dogecoin</h2>
@@ -222,6 +292,7 @@ Dogecoin sets itself apart from other digital currencies with an amazing, vibran
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="js/particles.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
